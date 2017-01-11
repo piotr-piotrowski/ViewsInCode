@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var redView:UIView!
+    var helloWorldLabel:UILabel!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,6 +31,13 @@ class ViewController: UIViewController {
         redView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height / 2))
         redView.backgroundColor = UIColor.red
         view.addSubview(redView)
+        
+        helloWorldLabel = UILabel(frame: CGRect(x: 20, y: view.bounds.height / 2 + 20, width: 20, height: 20))
+        helloWorldLabel.backgroundColor = UIColor.orange
+        view.addSubview(helloWorldLabel)
+        helloWorldLabel.text = "Hello World"
+        helloWorldLabel.font = helloWorldLabel.font.withSize(40)
+        helloWorldLabel.sizeToFit()
         
         print("View Did Load")
     }
